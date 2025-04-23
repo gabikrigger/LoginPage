@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, input} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
@@ -10,5 +10,7 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './default-login-layout.component.scss'
 })
 export class DefaultLoginLayoutComponent {
-
+  @Input() title = '';
+  @Input() primaryButtonText = '';
+  @Input() secondaryButtonText = '';
 }
