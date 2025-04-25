@@ -1,4 +1,4 @@
 export type LoginResponse = {
-    accessToken: string,
+    token: string,
     name: string
 }

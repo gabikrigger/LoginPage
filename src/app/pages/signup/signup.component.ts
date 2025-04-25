@@ -3,7 +3,7 @@ import {DefaultLoginLayoutComponent} from '../../components/default-login-layout
 import {FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators} from '@angular/forms';
 import {PrimaryInputComponent} from '../../components/primary-input/primary-input.component';
 import {Router} from '@angular/router';
-import {LoginService} from '../../service/login.service';
+import {LoginService} from '../../services/login.service';
 import {ToastrService} from 'ngx-toastr';
 
 interface SignupForm {
@@ -44,7 +44,7 @@ export class SignupComponent {
   }
 
   submit() {
-    this.loginService.login(this.signupForm.value.email, this.signupForm.value.password).subscribe({
+    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
       next: () => this.toastService.success("Login feito com sucesso!"),
       error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
     })
